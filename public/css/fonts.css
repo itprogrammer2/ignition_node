@@ -1,0 +1,45 @@
+@font-face {
+    font-family: customAD;
+    src: url(../fonts/ArchitectsDaughter.ttf);
+}
+
+@font-face {
+    font-family: customBN;
+    src: url(../fonts/BebasNeue.otf);
+}
+
+@font-face {
+    font-family: customEX;
+    src: url(../fonts/exljbris - Calluna-Regular.otf);
+}
+
+@font-face {
+    font-family: customFA;
+    src: url(../fonts/FontAwesome.otf);
+}
+
+@font-face {
+    font-family: customGM;
+    src: url(../fonts/Geog-MdIt.otf);
+}
+
+@font-face {
+    font-family: customGMD;
+    src: url(../fonts/Geogtq-Md.otf);
+}
+
+@font-face {
+    font-family: customGSB;
+    src: url(../fonts/Geogtq-Sb.otf);
+}
+
+@font-face {
+    font-family: customMR;
+    src: url(../fonts/MyriadPro-Regular.otf);
+}
+
+@font-face {
+    font-family: customPN;
+    src: url(../fonts/ProximaNova-Bold.otf);
+}
+

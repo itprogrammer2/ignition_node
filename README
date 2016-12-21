@@ -1,0 +1,15 @@
+# Dependencies
+
+npm i -S bcrypt
+npm i -S body-parser
+npm i -S connect-flash
+npm i -S cookie-parser
+npm i -S express
+npm i -S express-handlebars
+npm i -S express-messages
+npm i -S express-session
+npm i -S express-validators
+npm i -S passport
+npm i -S passport-http
+npm i -S passport-local
+npm i -S mysql

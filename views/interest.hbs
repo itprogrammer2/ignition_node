@@ -1,0 +1,132 @@
+<!-- Top content -->
+
+<div class="top-content">
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text">
+                    <h2 class="wow">Help  us understand your <strong>needs</strong>:</h2>
+                    <h4>Please select what interests you:</h4>
+                    <div style="width: 100%; height: 10px;"></div>
+                    <div class="description">
+                    	<!-- sorry... hidden Customer ID -->
+                    	<input type="text" id="hidden_customerid" value="{{{user_data.insertId}}}" />
+                    	<!-- Plans -->
+					    <section id="plans">
+					        <div class="container">
+					            <div class="row">
+
+					                <!-- item -->
+					                <div class="col-md-3 text-center" onclick="togglepanel('desk')">
+					                    <div class="panel panel-danger panel-choices">
+					                        <div class="panel-heading">
+					                            <i class="fa fa-desktop"></i>
+					                            <h3>Desk</h3>
+					                        </div>
+					                        <div class="panel-body panel-body-desk text-center">
+					                            <p><strong>First-come, First-serve</strong></p>
+					                        </div>
+					                        <ul class="list-group text-center">
+					                            <li class="list-group-item"><i class="fa fa-check"></i> Unlimited use of Internet</li>
+					                            <li class="list-group-item"><i class="fa fa-check"></i> Open space, you can seat anywhere</li>
+					                            <li class="list-group-item"><i class="fa fa-check"></i> 27/7 access</li>
+					                        </ul>
+					                        <div class="panel-footer">
+					                            <!-- <a class="btn btn-lg btn-block btn-danger" href="#">BUY NOW!</a> -->
+					                            <span class="system-checkmark"></span>
+					                        </div>
+					                    </div>
+					                </div>
+					                <!-- /item -->
+
+					                <!-- item -->
+					                <div class="col-md-3 text-center" onclick="togglepanel('dedicated-desk')">
+					                    <div class="panel panel-warning panel-choices">
+					                        <div class="panel-heading">
+					                            <i class="fa fa-desktop"></i>
+					                            <h3>Dedicated Desk</h3>
+					                        </div>
+					                        <div class="panel-body text-center">
+					                            <p><strong>A desk of your own</strong></p>
+					                        </div>
+					                        <ul class="list-group text-center">
+					                            <li class="list-group-item"><i class="fa fa-check"></i> One space in one location</li>
+					                            <li class="list-group-item"><i class="fa fa-check"></i> Personalized</li>
+					                            <li class="list-group-item"><i class="fa fa-check"></i> 27/7 access</li>
+					                        </ul>
+					                        <div class="panel-footer">
+					                            <!-- <a class="btn btn-lg btn-block btn-danger" href="#">BUY NOW!</a> -->
+					                            <span class="system-checkmark"></span>
+					                        </div>
+					                    </div>
+					                </div>
+					                <!-- /item -->
+
+					                <!-- item -->
+					                <div class="col-md-3 text-center" onclick="togglepanel('private-room')">
+					                    <div class="panel panel-success panel-choices">
+					                        <div class="panel-heading">
+					                            <i class="fa fa-desktop"></i>
+					                            <h3>Private Room</h3>
+					                        </div>
+					                        <div class="panel-body text-center">
+					                            <p><strong>Fully furnished space</strong></p>
+					                        </div>
+					                        <ul class="list-group text-center">
+					                            <li class="list-group-item"><i class="fa fa-check"></i> Can accomodate up to 20 people</li>
+					                            <li class="list-group-item"><i class="fa fa-check"></i> Includes chairs and filing cabinet</li>
+					                            <li class="list-group-item"><i class="fa fa-check"></i> 27/7 access</li>
+					                        </ul>
+					                        <div class="panel-footer">
+					                            <!-- <a class="btn btn-lg btn-block btn-danger" href="#">BUY NOW!</a> -->
+					                            <span class="system-checkmark"></span>
+					                        </div>
+					                    </div>
+					                </div>
+					                <!-- /item -->
+
+					                <!-- item -->
+					                <div class="col-md-3 text-center" onclick="togglepanel('conference-room')">
+					                    <div class="panel panel-info panel-choices">
+					                        <div class="panel-heading">
+					                            <i class="fa fa-desktop"></i>
+					                            <h3>Conference Room</h3>
+					                        </div>
+					                        <div class="panel-body text-center">
+					                            <p><strong>Conference Room</strong></p>
+					                        </div>
+					                        <ul class="list-group text-center">
+					                            <li class="list-group-item"><i class="fa fa-check"></i> Can accomodate up to 10 people</li>
+					                            <li class="list-group-item"><i class="fa fa-check"></i> Includes projector</li>
+					                            <li class="list-group-item"><i class="fa fa-check"></i> 27/7 access</li>
+					                        </ul>
+					                        <div class="panel-footer">
+					                            <!-- <a class="btn btn-lg btn-block btn-danger" href="#">BUY NOW!</a> -->
+					                            <span class="system-checkmark"></span>
+					                        </div>
+					                    </div>
+					                </div>
+					                <!-- /item -->
+
+					            </div>
+					        </div>
+					    </section>
+					    <!-- /Plans -->
+                    </div>
+                    <div class="col-md-4">
+			            
+			        </div>
+                    <div class="col-md-4">
+                    	<input type="submit" id="submitinterest" class="btn btn-danger btn-lg btn-block btn-huge" value="SUBMIT">
+			        </div>
+			        <div class="col-md-4">
+			            
+			        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-bg col-lg-12">
+
+    </div>
+</div>
