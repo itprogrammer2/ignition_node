@@ -379,6 +379,16 @@ LOADER
     color: #000;
 }
 
+.navbar-footer 
+{
+    background-color:#DDD;
+}
+.navbar-footer-content { padding:15px 15px 15px 15px; }
+.dropdown-menu {
+padding: 0px;
+overflow: hidden;
+}
+
 /*WORKSPACE*/
 
 .workspace-left {
@@ -1459,3 +1469,4 @@ END PANEL OPTIONS
 {
     font-size: 87px;
 }
+
