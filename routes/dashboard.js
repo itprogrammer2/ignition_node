@@ -26,6 +26,7 @@ router.get('/', csrfProtection, Index);
 
 //Signin Template
 function Index(req, res){
+	console.log(req.session.profile);
 	if (req.session && req.session.profile) {
 		res.render('dashboard/index');
 	}
