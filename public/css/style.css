@@ -11,6 +11,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: customGMD;
+    background: url(../images/sketch_bg_small.png);
 }
 
 #page_loader {
@@ -966,14 +967,110 @@ LOADER
     }
 }
 
-.btn-google {
+/*.btn-google {
     background-color: #c32f10;
     color: #FFF;
 }
 .btn-facebook {
     background-color: #3b5998;;
     color: #FFF;
+}*/
+
+
+
+
+.social-login-btn {
+  margin: 5px;
+  width: 20%;
+  font-size: 250%;
+  padding: 0;
 }
+
+.social-login-more {
+  width: 45%;
+}
+
+.social-google {
+  background-color: #da573b;
+  border-color: #be5238;
+}
+.social-google:hover{
+  background-color: #be5238;
+  border-color: #9b4631;
+}
+
+.social-twitter {
+  background-color: #1daee3;
+  border-color: #3997ba;
+}
+.social-twitter:hover {
+  background-color: #3997ba;
+  border-color: #347b95;
+}
+
+.social-facebook {
+  background-color: #4c699e;
+  border-color: #47618d;
+}
+.social-facebook:hover {
+  background-color: #47618d;
+  border-color: #3c5173;
+}
+
+.social-linkedin {
+  background-color: #4875B4;
+  border-color: #466b99;
+}
+.social-linkedin:hover {
+  background-color: #466b99;
+  border-color: #3b5a7c;
+}
+
+@-ms-viewport       { width: device-width; }
+/*css for login form page*/
+    .or-text-row {
+    display: table-row;
+  }
+  .or-text {
+    display: table;     
+    width: 100%;
+    position: relative;
+    margin: 20px 0;
+  }
+  .or-text-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+  }
+  .or-text-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #e8e8e8;
+    z-order: 0;
+  }
+  .or-text-line {    
+    display: table-cell;
+    text-align: center;
+    position: relative;
+    width: 100%;
+  }
+  .or-text-line p {
+    margin-top:10px;
+  }
+  .btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 2px 0;
+    font-size: 17px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+  } 
+  .btn-group{margin-bottom: 5px;}
+  .fa{padding-right: 10px;}
 
 
 
@@ -1332,6 +1429,14 @@ PANEL OPTIONS
 .row-lg-200 {
   height: 200px;
 }
+
+.row-lg-100 {
+  height: 100px;
+}
 /*
 END PANEL OPTIONS
 */
+
+.need-help {
+  margin-top: 10px;
+}

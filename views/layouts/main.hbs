@@ -6,11 +6,14 @@
 <title>IGNITION | Your Engine for Innovation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <!-- attach CSS styles -->
-<link type="text/css" rel="stylesheet" href="../css/fonts-css?family=Roboto:300,400,500,700">
+<link type="text/css" rel="stylesheet" href="../css/fonts.css?family=Roboto:300,400,500,700">
+<link href="../css/font-awesome.css" rel="stylesheet">
 <link href="../css/bootstrap.css" rel="stylesheet">
 <link href="../css/fonts.css" rel="stylesheet" />
 <link href="../css/style.css" rel="stylesheet" />
 <link href="../css/form-signin.css" rel="stylesheet" />
+<link href="../css/profile.css" rel="stylesheet" />
+<link href="../css/community.css" rel="stylesheet" />
 
 <!-- <link href="../plugins/owl/owl.carousel.css" rel="stylesheet" />
 <link href="../plugins/owl/owl.theme.css" rel="stylesheet" />
@@ -23,7 +26,7 @@
 <link rel="icon" type="image/png" href="../images/favicon.png" />
 </head>
 <body>
-	<div id="page_loader" class="loader"></div>
+	<!-- <div id="page_loader" class="loader"></div> -->
 	<!-- Navigational Menu -->
 	<div>
 		<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -41,6 +44,12 @@
 				</div>
 				<div class="collapse navbar-collapse" id="navbar-collapse-main">
 					<ul class="nav navbar-nav navbar-right">
+						{{#if profile}}
+						<li><a href="/dashboard">DASHBOARD</a></li>
+						<li><a href="/profile">PROFILE</a></li>
+						<li><a href="/community">COMMUNITY</a></li>
+						<li><a href="/logout">LOGOUT</a></li>
+						{{else}}
 						<li><a href="#home">ABOUT</a></li>
 						<!-- <li class="active"><a href="#space">SPACE</a></li> -->
 						<li><a href="#workspace">SPACE</a></li>
@@ -48,13 +57,13 @@
 						<li><a href="#community">COMMUNITY</a></li>
 						<li><a href="#capital">CAPITAL</a></li>
 						<li><a href="#stories">STORIES</a></li>
+						<li><a href="/user/signin">SIGNIN</a></li>
+						{{/if}}
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</div>
-
-	
 
 	<div class="col-lg-10">
 		{{#if success_msg}}
@@ -124,6 +133,14 @@
 				<div class="row">
 					Instagram
 				</div>
+				<div class="row" style="margin-top: 20px;">
+					<!-- <div
+					  	class="fb-like"
+					  	data-share="true"
+					  	data-width="450"
+					  	data-show-faces="true">
+					</div> -->
+				</div> 
 			</div>
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 details">
 				<img src="asdf">
@@ -173,8 +190,7 @@
 				            <div class="account-wall">
 				            	<p class="text-center login-title">
 				            		To continue, sign in to &nbsp;</p>
-				                <!-- <img class="profile-img" src="../images/nophoto.png"
-				                    alt=""> -->
+				                
 				                <img src="../images/FINAL_LOGO1.png" style="width: 80%; margin: 0 0 0 10%;">
 				                <form class="form-signin" action="/user/auth" method="post">
 					                <input type="text" class="form-control" placeholder="Email" name="username" required autofocus>
@@ -187,11 +203,13 @@
 					                </label>
 					                <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
 
-					                <!-- <a href="register.html" class="text-center new-account" >Create an account </a> -->
+					                <a href="register.html" class="text-center new-account" >Create an account </a>
 
 					                <div class="row">
 								        <div class="col-xs-12 col-sm-6 col-md-6" style="margin-top: 5px;">
-								          	<a href="#" class="btn btn-sm btn-facebook btn-block">Sign in with Facebook</a>
+								          	<a href="#" class="btn btn-sm btn-facebook btn-block" >Sign in with Facebook</a>
+
+								          	<fb:login-button class="col-xs-12 col-sm-6 col-md-6" scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 								        </div>
 								        <div class="col-xs-12 col-sm-6 col-md-6" style="margin-top: 5px;">
 								          	<a href="#" class="btn btn-sm btn-google btn-block">Sign in with Google</a>
@@ -206,7 +224,8 @@
 	                                        </a>
 	                                        </div>
 	                                    </div>
-	                                </div>   
+	                                </div>  
+	                                
 				                </form>
 				            </div>
 				        </div>
@@ -242,12 +261,30 @@
 	<script src="../plugins/loader/pace.min.js"></script>
 	<!-- <script src="../plugins/owl/owl.carousel.min.js"></script> -->
 	<script src="../plugins/owl/owl.carousel.min.js"></script>
-	<script src="../plugins/backstretch/jquery.backstretch.min.js"></script>
+	<!-- <script src="../plugins/backstretch/jquery.backstretch.min.js"></script> -->
 
-	<!-- <script src="//maps.google.com/maps/api/js?sensor=true&key=AIzaSyAAarl7EUpxZrbx87JIZSbbONdMnJuvaEE"></script>
- -->
-	<script src="../plugins/loader/imagesloaded.pkgd.min.js"></script>
+	<script src="//maps.google.com/maps/api/js?sensor=true&key=AIzaSyAAarl7EUpxZrbx87JIZSbbONdMnJuvaEE"></script>
+
+	<!-- <script src="../plugins/loader/imagesloaded.pkgd.min.js"></script> -->
 
 	<script src="../js/main.js"></script>
+
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '1327134493994900',
+	      xfbml      : true,
+	      version    : 'v2.8'
+	    });
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
 </body>
 </html>

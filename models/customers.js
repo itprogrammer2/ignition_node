@@ -44,10 +44,19 @@ model.auth = function(data, res, callback){
 				left join customers on (accounts.customers_id = customers.id) \
 				where username = ? and password = ?;';
 
-	connection.query(query, [data.username, md5(data.password)], function(err, rows, fields) {
+	connection.query(query, [data.email, md5(data.password)], function(err, rows, fields) {
 	  	if (err) throw err;
-	  	var result = JSON.stringify(rows);
-	  	callback(result);
+	  	
+	  	var result={};
+	  	if(rows.length > 0){
+	  		result.status = true;
+	  		result.data = rows[0];
+	  	}
+	  	else {
+	  		result.status = false;
+	  	}
+	  	
+	  	callback(JSON.stringify(result));
 	});
 
 	connection.end();

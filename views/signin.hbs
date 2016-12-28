@@ -1,0 +1,83 @@
+<!-- Top content -->
+<div style="width:100%; height:50px;"></div>
+<div class="top-content">
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 text">
+                    <h1 class="wow fadeInLeftBig">Feel the <strong>distinction</strong>.</h1>
+                    <h1>Experience the <img src="../images/FINAL_LOGO1_white.png" style="width: 150px;"> space <strong>now!</strong></h1>
+                    <div class="description wow fadeInLeftBig">
+                    	<p>
+                        	The office is more than just a place to work. The workplace should inspire everything related to the entrepreneur's business. Ignition space is particularly designed to project an image of confidence, success and a high level of competence.
+                    	</p>
+                    </div>
+                    
+                </div>
+                <div class="col-sm-5 form-box">
+                	<div class="form-top">
+                		<!-- <div class="form-top-left font-white col-lg-9 col-sm-7 col-md-9 col-md-offset-2">
+                			<h3>We need a few information about you.</h3>
+                    		<p>Fill in the form below to get instant access:</p>
+                		</div> -->
+                    </div>
+                    <div class="form-bottom pad-section">
+	                    <div class="row">
+                            <div class="col-lg-10 col-sm-7 col-md-9 col-md-offset-2">
+                                <div class="account-wall required-field-block">
+                                    <!-- <p class="text-center login-title">
+                                        To continue, sign in to &nbsp;</p> -->
+                                    
+                                    <img src="../images/FINAL_LOGO1.png" style="width: 80%; margin: 0 0 0 10%;">
+                                    <form class="form-signin" role="form" action="/user/signin" method="post">
+                                        <input type="hidden" name="_csrf" value="{{{csrfToken}}}">
+                                        <input type="text" class="form-control {{{loginclass.email.class}}}" placeholder="Email" name="email" value="{{{userdata.email}}}">
+                                        <input type="password" class="form-control {{{loginclass.password.class}}}" placeholder="Password" name="password">
+                                        <button class="btn btn-lg btn-danger btn-block" type="submit">
+                                            Sign in</button>
+                                        <label class="checkbox pull-left">
+                                            <input type="checkbox" value="remember-me">
+                                            Stay signed in
+                                        </label>
+                                        <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+
+                                        <div class="or-text">
+                                            <div class="or-text-row">
+                                                <div class="or-text-line">
+                                                    <button type="button" class="btn btn-default btn-circle" disabled="disabled">or</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div>
+                                                <p>
+                                                    <a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
+                                                    <a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
+                                                    <a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
+                                                    <a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-top:10px;">
+                                            <div class="col-md-12 control">
+                                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                                    Don't have an account! 
+                                                <a href="/user/register" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                                    Sign Up Here
+                                                </a>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                        
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
