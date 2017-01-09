@@ -29,14 +29,16 @@
                                         To continue, sign in to &nbsp;</p> -->
                                     
                                     <img src="../images/FINAL_LOGO1.png" style="width: 80%; margin: 0 0 0 10%;">
-                                    <form class="form-signin" role="form" action="/user/signin" method="post">
+                                    <form class="form-signin" role="form">
+                                    <!-- <form class="form-signin" role="form" action="/user/signin" method="post"> -->
                                         <input type="hidden" name="_csrf" value="{{{csrfToken}}}">
-                                        <input type="text" class="form-control {{{loginclass.email.class}}}" placeholder="Email" name="email" value="{{{userdata.email}}}">
-                                        <input type="password" class="form-control {{{loginclass.password.class}}}" placeholder="Password" name="password">
-                                        <button class="btn btn-lg btn-danger btn-block" type="submit">
-                                            Sign in</button>
+                                        <input type="text" class="form-control {{{loginclass.email.class}}}" placeholder="Email" id="email" name="email" value="{{{userdata.email}}}">
+                                        <input type="password" class="form-control {{{loginclass.password.class}}}" placeholder="Password" id="password" name="password">
+                                        <input type="button" class="btn btn-lg btn-danger btn-block" id="signin" value="Sign in" />
+                                        <!-- <button class="btn btn-lg btn-danger btn-block" type="submit">
+                                            Sign in</button> -->
                                         <label class="checkbox pull-left">
-                                            <input type="checkbox" value="remember-me">
+                                            <input type="checkbox" id="stay_signin" name="stay_sigin" />
                                             Stay signed in
                                         </label>
                                         <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>

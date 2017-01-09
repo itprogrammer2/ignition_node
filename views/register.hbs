@@ -15,6 +15,7 @@
                     <div class="top-big-link wow fadeInUp">
                     	<a class="btn btn-danger" href="#pricing">Our prices</a>
                     	<a class="btn btn-primary" href="../#services">Learn more</a>
+                        
                     </div>
                 </div>
                 <div class="col-sm-5 form-box wow fadeInUp">
@@ -36,40 +37,41 @@
                     			</div>
                     		{{/each}}
                     	{{/if}} -->
-	                    <form role="form" method="post" action="/user/register">
-                            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                        <!-- <form role="form" method="post" action="/user/register"> -->
+	                    <form role="form">
+                            <!-- <input type="hidden" name="_csrf" value="{{csrfToken}}"> -->
 	                    	<div class="form-group required-field-block">
 	                    		<label class="sr-only" for="name_of_business">Name of Business</label>
-	                        	<input type="text" name="name_of_business" placeholder="Name of Business" class="form-control {{{registerclass.name_of_business.class}}}" id="name_of_business" value="{{{userdata.name_of_business}}}" required>
+	                        	<input type="text" id="name_of_business" name="name_of_business" placeholder="Name of Business" class="form-control {{{registerclass.name_of_business.class}}}" id="name_of_business" value="{{{userdata.name_of_business}}}" required>
                                 <div class="{{{registerclass.name_of_business.icon}}}">
                                     <div class="text">*</div>
                                 </div>
 	                        </div>
 	                        <div class="form-group required-field-block">
 	                        	<label class="sr-only" for="nature_of_business">Nature of Business</label>
-	                        	<input type="text" name="nature_of_business" placeholder="Nature of Business" class="form-control {{{registerclass.nature_of_business.class}}}" id="nature_of_business" value="{{{userdata.nature_of_business}}}" required>
+	                        	<input type="text" id="nature_of_business" name="nature_of_business" placeholder="Nature of Business" class="form-control {{{registerclass.nature_of_business.class}}}" id="nature_of_business" value="{{{userdata.nature_of_business}}}" required>
                                 <div class="{{{registerclass.nature_of_business.icon}}}">
                                     <div class="text">*</div>
                                 </div>
 	                        </div>
 	                        <div class="form-group required-field-block">
 	                        	<label class="sr-only" for="contact_person">Contact Person</label>
-	                        	<input type="text" name="contact_person" placeholder="Contact Person" class="form-control {{{registerclass.contact_person.class}}}" id="contact_person" value="{{{userdata.contact_number}}}" required>
+	                        	<input type="text" id="contact_person" name="contact_person" placeholder="Contact Person" class="form-control {{{registerclass.contact_person.class}}}" id="contact_person" value="{{{userdata.contact_number}}}" required>
                                 <div class="{{{registerclass.contact_person.icon}}}">
                                     <div class="text">*</div>
                                 </div>
 	                        </div>
 	                        <div class="row form-group required-field-block">
 	                        	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-	                        		<label class="sr-only" for="contact_person">Contact Number</label>
-									<input type="text" name="contact_number" placeholder="Contact Number" class="form-control {{{registerclass.contact_number.class}}}" id="contact_number" value="{{{userdata.contact_number}}}" required>
+	                        		<label class="sr-only" for="contact_number">Contact Number</label>
+									<input type="text" id="contact_number" name="contact_number" placeholder="Contact Number" class="form-control {{{registerclass.contact_number.class}}}" id="contact_number" value="{{{userdata.contact_number}}}" required>
                                     <div class="{{{registerclass.contact_number.icon}}}">
                                         <div class="text">*</div>
                                     </div>
 								</div>	
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 									<label class="sr-only" for="email_address">Email Address</label>
-									<input type="text" name="email_address" placeholder="Email Address" class="form-control {{{registerclass.email_address.class}}}" id="email_address" value="{{{userdata.email_address}}}" required>
+									<input type="text" id="email_address" name="email_address" placeholder="Email Address" class="form-control {{{registerclass.email_address.class}}}" id="email_address" value="{{{userdata.email_address}}}" required><span id="email_msg"></span>
                                     <div class="{{{registerclass.email_address.icon}}}">
                                         <div class="text">*</div>
                                     </div>
@@ -81,8 +83,14 @@
 	                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
 	                        </div> -->
 	                        <div class="row form-group required-field-block">
-								<div class="col-md-6" style="margin-top: 5px;"><a href="/user/signin" class="btn btn-success btn-block btn-md">I already have an account</a></div>
-								<div class="col-md-6" style="margin-top: 5px;"><input type="submit" value="Register" class="btn btn-danger btn-block btn-md" tabindex="7"></div>
+								<div class="col-md-6" style="margin-top: 5px;">
+                                    <a href="/user/signin" class="btn btn-success btn-block btn-md">I already have an account</a>
+                                </div>
+								<div class="col-md-6" style="margin-top: 5px;">
+                                    <!-- <input type="submit" value="Register" class="btn btn-danger btn-block btn-md" tabindex="7"> -->
+                                    <input type="button" class="btn btn-danger btn-block btn-md" id="register" value="Register" />
+                                </div>
+                                <div id="results"></div>
 							</div>
 	                        <div class="form-links form-group">
 	                        	<a href="#">Privacy Policy</a> - 
@@ -98,3 +106,4 @@
 
     </div>
 </div>
+
