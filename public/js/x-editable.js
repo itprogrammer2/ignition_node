@@ -4,7 +4,7 @@ $(document).ready(function (){
 
     var user_id = Cookies.get(md5('_id'));
 
-    $.get('http://localhost:9001/api/contents', function(data){
+    $.get('http://ignition.biz:9001/api/contents', function(data){
     	if(data.status == true){
     		var contents = data.data;
 
@@ -18,7 +18,7 @@ $(document).ready(function (){
 	    				.editable({
 						    type: contents[i].field_type,
 						    pk: contents[i].id,
-						    url: 'http://localhost:9001/api/content/insert',
+						    url: 'http://ignition.biz:9001/api/content/insert',
 						    validate: function(value){
 						    	if(value.replace(/\s/g,'') == '') {
 							        return 'This field is required';

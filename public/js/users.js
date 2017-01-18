@@ -42,7 +42,7 @@ $(document).ready(function (){
         }
 
         if(errors.length == 0){
-            $.post( 'http://localhost:9001/api/user/register', fields, function(data) {
+            $.post( 'http://ignition.biz:9001/api/user/register', fields, function(data) {
                 $('#results').html(data);
             });
         }
@@ -88,7 +88,7 @@ $(document).ready(function (){
             }
         }
         
-        $.post( 'http://localhost:9001/api/user/auth', fields, function(data) {
+        $.post( 'http://ignition.biz:9001/api/user/auth', fields, function(data) {
             if(data.status){
                 // removed because auth_token has its own expiration
                 // var duration = (1 / 24); /* default is 1 hour only */
