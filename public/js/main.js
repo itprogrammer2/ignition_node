@@ -38,6 +38,8 @@ function in_array(arr, str){
 
 $(document).ready(function (){    
 
+    
+
   // $('#submitinterest').on('click', function(data){
   //   $.post('/user/interest', { interests : panels.join(','), customer_id : $('#hidden_customerid').val() }, function(data){
   //     $('#Register_thankyou').modal('toggle');
@@ -92,11 +94,4 @@ $(document).ready(function (){
         autoplayHoverPause: true,
         smartSpeed:1500
     });
-
-    
-
-    
-
-
-
 });

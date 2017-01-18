@@ -42,13 +42,13 @@ $(document).ready(function (){
         }
 
         if(errors.length == 0){
-            $.post( 'http://localhost:9000/api/user/register', fields, function(data) {
+            $.post( 'http://localhost:9001/api/user/register', fields, function(data) {
                 $('#results').html(data);
             });
         }
         else {
             $('#results').html(errors);
-            //Put error message generator here...
+            /* Put error message generator here... */
         }
     }
 
@@ -87,9 +87,25 @@ $(document).ready(function (){
                 fields[i] = fld;
             }
         }
+        
+        $.post( 'http://localhost:9001/api/user/auth', fields, function(data) {
+            if(data.status){
+                // removed because auth_token has its own expiration
+                // var duration = (1 / 24); /* default is 1 hour only */
 
-        $.post( 'http://localhost:9000/api/user/auth', fields, function(data) {
-            console.log(data);
+                // if(fields.stay_signin == true){
+                //     duration = 1; /* day */
+                // }
+
+                var expiration = new Date(data.data[0].auth_token_expiration);
+                Cookies.set(md5('_id'), data.data[0].profile_id, { expires : expiration });
+                Cookies.set(md5('_token'), data.data[0].auth_token, { expires : expiration });
+
+                window.location = '/';
+            }
+            else {
+                console.log('else');
+            }    
         });
     }
 

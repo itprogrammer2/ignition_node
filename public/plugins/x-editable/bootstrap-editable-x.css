@@ -1,0 +1,50 @@
+ .form-controlx {
+ 	z-index: 99999;
+ }
+
+ .input-smx {
+	border: none;
+	outline: none;
+	background: transparent;
+	width: auto;
+	border-bottom: solid 1px #CCC;
+}
+
+.input-largex {
+	border: none;
+	outline: none;
+	background: transparent;
+	width: auto;
+	border-bottom: solid 1px #CCC;
+}
+
+/*.xeditable  span {
+	cursor: pointer;
+}*/
+
+.xwhite .editable-input > textarea, .xwhite .editable-input > input {
+	color: #FFF;
+}
+
+.xblack .editable-input > textarea, .xblack .editable-input > input {
+	color: #000;
+}
+
+.xred .editable-input > textarea, .xred .editable-input > input {
+	color: #e94a4e;
+}
+
+.editable-buttons .btn {
+	z-index: -1;
+}
+
+
+/*.textarea1 {
+	border: none;
+	outline: none;
+	background: transparent;
+
+	border-bottom: solid 1px #CCC;
+	width: auto;
+	height: auto;
+}*/

@@ -22,6 +22,7 @@ var app = express();
 app.disable('x-powered-by');
 
 //Views
+app.use('/public', express.static('public'));
 app.set('views', path.join(__dirname, 'views'));
 app.engine('hbs', hbs({ extname: 'hbs', defaultLayout:'main' }));
 app.set('view engine', 'hbs');
@@ -82,7 +83,7 @@ app.use('/profile', profile);
 app.use('/community', community);
 
 //Set Port
-app.set('port', (process.env.PORT || 9001));
+app.set('port', (process.env.PORT || 9000));
 
 //Initialize App
 app.listen(app.get('port'), function(){
