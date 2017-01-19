@@ -1,10 +1,13 @@
 $(document).ready(function (){ 
+	var hostname = window.location.hostname;
+	console.log(hostname);
+
 	$.fn.editable.defaults.mode = 'inline';
     /*$.fn.editable.defaults.mode = 'popup';*/
 
     var user_id = Cookies.get(md5('_id'));
 
-    $.get('http://ignition.biz:9001/api/contents', function(data){
+    $.get('http://'+hostname+':9001/api/contents', function(data){
     	if(data.status == true){
     		var contents = data.data;
 
@@ -18,7 +21,7 @@ $(document).ready(function (){
 	    				.editable({
 						    type: contents[i].field_type,
 						    pk: contents[i].id,
-						    url: 'http://ignition.biz:9001/api/content/insert',
+						    url: 'http://'+hostname+':9001/api/content/insert',
 						    validate: function(value){
 						    	if(value.replace(/\s/g,'') == '') {
 							        return 'This field is required';

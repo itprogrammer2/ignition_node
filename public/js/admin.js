@@ -1,4 +1,5 @@
 $(document).ready(function (){
+    var hostname = window.location.hostname;
     
     setTimeout(function(){
         fetch_drafts(); 
@@ -12,7 +13,7 @@ $(document).ready(function (){
                 $('#session_expired').modal('show');
             }
             else {
-                $.post('http://ignition.biz:9001/api/content/update', { user_id : Cookies.get(md5('_id')) }, function(data){
+                $.post('http://'+hostname+':9001/api/content/update', { user_id : Cookies.get(md5('_id')) }, function(data){
                     if(data.status == true){
                         $('.sticky-sidebar').fadeOut(200);
                     }
@@ -28,7 +29,7 @@ $(document).ready(function (){
                 $('#session_expired').modal('show');
             }
             else {
-                $.post('http://ignition.biz:9001/api/content/revert', { user_id : Cookies.get(md5('_id')) }, function(data){
+                $.post('http://'+hostname+':9001/api/content/revert', { user_id : Cookies.get(md5('_id')) }, function(data){
                     if(data.status == true){
                         $('.sticky-sidebar').fadeOut(200);
                     }
@@ -38,7 +39,7 @@ $(document).ready(function (){
     });
 
     function fetch_drafts(){
-        $.post('http://ignition.biz:9001/api/content/drafts', { user_id : Cookies.get(md5('_id')) }, function(data){
+        $.post('http://'+hostname+':9001/api/content/drafts', { user_id : Cookies.get(md5('_id')) }, function(data){
             if(data.status == true){
                 $('.sticky-sidebar').fadeIn(200);
 
