@@ -13,6 +13,10 @@ $(document).ready(function (){
         signin();
     });
 
+    $('#user_logout').on('click', function(e){
+        logout();
+    });
+
     function register(){
         var fields = {
             name_of_business: '',
@@ -100,7 +104,7 @@ $(document).ready(function (){
                 // }
 
                 var expiration = new Date(data.data[0].auth_token_expiration);
-                Cookies.set(md5('_id'), data.data[0].profile_id, { expires : expiration });
+                Cookies.set(md5('_id'), data.data[0].hash_id, { expires : expiration });
                 Cookies.set(md5('_token'), data.data[0].auth_token, { expires : expiration });
 
                 getUserProfile(data.data[0]);
@@ -110,6 +114,22 @@ $(document).ready(function (){
                 // login attempt failed
                 console.log('else');
             }    
+        });
+    }
+
+    function logout(){
+        var fields = {
+            _token : Cookies.get(md5('_token'))
+        };
+
+        $.post( 'http://'+hostname+':9001/api/user/logout', fields, function(data) {
+            if(data.status){
+                Cookies.remove(md5('_id'));
+                Cookies.remove(md5('_token'));
+                Cookies.remove(md5('_profile'));
+
+                window.location = '/';
+            }
         });
     }
 
