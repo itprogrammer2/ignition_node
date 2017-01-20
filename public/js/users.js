@@ -118,6 +118,9 @@ $(document).ready(function (){
             if(data.status){
                 Cookies.set(md5('_profile'), data.data[0], { expires : new Date(user_data.auth_token_expiration), path : '' });
 
+                console.log(Cookies.get(md5('_id')));
+                console.log(Cookies.get(md5('_token')));
+                console.log(Cookies.get(md5('_profile')));
                 //window.location = '/';
             }
             else {
