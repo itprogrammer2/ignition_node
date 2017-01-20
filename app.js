@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
+// var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hbs = require('express-handlebars');
 var expressValidator = require('express-validator');
@@ -15,11 +15,15 @@ var dashboard = require('./routes/dashboard');
 var profile = require('./routes/profile');
 var community = require('./routes/community');
 
+var morgan       = require('morgan');
+
 
 //Initialize Ignition API
 var app = express();
 
 app.disable('x-powered-by');
+
+//app.use(morgan('dev')); // log every request to the console
 
 //Views
 app.use('/public', express.static('public'));
@@ -30,7 +34,7 @@ app.set('view engine', 'hbs');
 //Middleware - BodyParser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser());
 
 
 //Static Folder - Where all publicly available files must be found
@@ -72,7 +76,9 @@ app.use(function(req, res, next){
 	res.locals.success_msg = req.flash('success_msg');
 	res.locals.error_msg = req.flash('error_msg');
 	res.locals.error = req.flash('error');
-	res.locals.profile = req.session.profile || null;
+	res.locals._token = req.session._token || null;
+	res.locals._id = req.session._id || null;
+	res.locals._profile = req.session._profile || null;
 	next();
 });
 

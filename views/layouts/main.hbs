@@ -49,13 +49,13 @@
 				</div>
 				<div class="collapse navbar-collapse" id="navbar-collapse-main">
 					<ul class="nav navbar-nav navbar-right">
-						{{#if profile}}
+						{{#if _token}}
 						<li><a href="/dashboard">DASHBOARD</a></li>
 						<li><a href="/community">COMMUNITY</a></li>
 						<li class="dropdown">
 		                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 		                       <!--  <span class="glyphicon glyphicon-user"></span>  -->
-		                        <strong>{{{profile.data.contact_person}}}</strong>
+		                        <strong>{{{_profile.first_name}}}</strong>
 		                        <span class="glyphicon glyphicon-chevron-down"></span>
 		                    </a>
 		                    <ul class="dropdown-menu">
@@ -68,10 +68,10 @@
 		                                        </p>
 		                                    </div>
 		                                    <div class="col-lg-8">
-		                                        <p class="text-left"><strong>{{{profile.data.contact_person}}}</strong></p>
-		                                        <p class="text-left small">{{{profile.data.email_address}}}</p>
+		                                        <p class="text-left"><strong>{{{_profile.first_name}}} {{{_profile.middle_name}}} {{{_profile.last_name}}}</strong></p>
+		                                        <p class="text-left small">{{{_profile.email_address}}}</p>
 		                                        <p class="text-left">
-		                                            <a href="/profile" class="btn btn-primary btn-block btn-sm">View Profile</a>
+		                                            <a href="/profile/{{{_profile.hash_id}}}" class="btn btn-primary btn-block btn-sm">View Profile</a>
 		                                        </p>
 		                                    </div>
 		                                </div>
@@ -102,7 +102,6 @@
 						<li><a href="#capital">CAPITAL</a></li>
 						<li><a href="#stories">STORIES</a></li>
 						<li><a href="/user/signin">SIGNIN</a></li>
-
 						{{/if}}
 					</ul>
 				</div>

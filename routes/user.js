@@ -120,7 +120,7 @@ function SignInPost(req, res){
 
 			if(result.status){
 				//set session
-				req.session.profile = result;
+				//req.session.profile = result;
 				//redirect to dashboard
 				res.redirect('/dashboard/');
 				//do cookies here

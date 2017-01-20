@@ -1,4 +1,6 @@
 $(document).ready(function (){
+    var hostname = window.location.hostname;
+
     $("#email_address").verimail({
         messageElement: "span#email_msg"
     });
@@ -42,7 +44,7 @@ $(document).ready(function (){
         }
 
         if(errors.length == 0){
-            $.post( 'http://ignition.biz:9001/api/user/register', fields, function(data) {
+            $.post( 'http://'+hostname+':9001/api/user/register', fields, function(data) {
                 $('#results').html(data);
             });
         }
@@ -88,7 +90,7 @@ $(document).ready(function (){
             }
         }
         
-        $.post( 'http://ignition.biz:9001/api/user/auth', fields, function(data) {
+        $.post( 'http://'+hostname+':9001/api/user/auth', fields, function(data) {
             if(data.status){
                 // removed because auth_token has its own expiration
                 // var duration = (1 / 24); /* default is 1 hour only */
@@ -98,12 +100,29 @@ $(document).ready(function (){
                 // }
 
                 var expiration = new Date(data.data[0].auth_token_expiration);
-                Cookies.set(md5('_id'), data.data[0].profile_id, { expires : expiration });
-                Cookies.set(md5('_token'), data.data[0].auth_token, { expires : expiration });
+                Cookies.set(md5('_id'), data.data[0].profile_id, { expires : expiration, domain : hostname });
+                Cookies.set(md5('_token'), data.data[0].auth_token, { expires : expiration, domain : hostname });
+
+                getUserProfile(data.data[0]);
+
+            }
+            else {
+                // login attempt failed
+                console.log('else');
+            }    
+        });
+    }
+
+    function getUserProfile(user_data){
+        $.post( 'http://'+hostname+':9001/api/user', user_data, function(data) {
+            if(data.status){
+                Cookies.set(md5('_profile'), data.data[0], { expires : new Date(user_data.auth_token_expiration), domain : hostname });
 
                 window.location = '/';
             }
             else {
+
+                //there was an error fetching user profile
                 console.log('else');
             }    
         });
