@@ -100,8 +100,11 @@ $(document).ready(function (){
                 // }
 
                 var expiration = new Date(data.data[0].auth_token_expiration);
-                Cookies.set(md5('_id'), data.data[0].profile_id, { expires : expiration, path : '' });
-                Cookies.set(md5('_token'), data.data[0].auth_token, { expires : expiration, path : '' });
+                // Cookies.set(md5('_id'), data.data[0].profile_id, { expires : expiration, path : '' });
+                // Cookies.set(md5('_token'), data.data[0].auth_token, { expires : expiration, path : '' });
+                $.cookie(md5('_id'), data.data[0].profile_id, { expires: expiration, path: '/' });
+                $.cookie(md5('_token'), data.data[0].auth_token, { expires: expiration, path: '/' });
+
 
                 getUserProfile(data.data[0]);
 
@@ -116,7 +119,8 @@ $(document).ready(function (){
     function getUserProfile(user_data){
         $.post( 'http://'+hostname+':9001/api/user', user_data, function(data) {
             if(data.status){
-                Cookies.set(md5('_profile'), data.data[0], { expires : new Date(user_data.auth_token_expiration), path : '' });
+                //Cookies.set(md5('_profile'), data.data[0], { expires : new Date(user_data.auth_token_expiration), path : '' });
+                $.cookie(md5('_profile'), data.data[0], { expires: new Date(user_data.auth_token_expiration), path: '/' });
 
                 console.log(Cookies.get(md5('_id')));
                 console.log(Cookies.get(md5('_token')));
