@@ -118,7 +118,7 @@ $(document).ready(function (){
             if(data.status){
                 Cookies.set(md5('_profile'), data.data[0], { expires : new Date(user_data.auth_token_expiration) });
 
-                window.location = '/';
+                //window.location = '/';
             }
             else {
 
